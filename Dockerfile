@@ -19,7 +19,10 @@ RUN apk -U upgrade \
     bash \
     sudo \
     vim \
- && pip3 install --no-cache "isso==${ISSO_VER}" \
+
+ && pip3 install -U --no-cache pip \
+ && pip install --no-cache gevent \
+ && pip install --no-cache "isso==${ISSO_VER}" \
  && apk del build-dependencies \
  && rm -rf /tmp/* /var/cache/apk/*
 
