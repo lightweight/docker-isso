@@ -16,6 +16,9 @@ RUN apk -U upgrade \
     ca-certificates \
     su-exec \
     tini \
+    bash \
+    sudo \
+    vim \
  && pip3 install --no-cache "isso==${ISSO_VER}" \
  && apk del build-dependencies \
  && rm -rf /tmp/* /var/cache/apk/*
@@ -28,6 +31,6 @@ EXPOSE 8080
 
 VOLUME /db /config
 
-LABEL maintainer="Wonderfall <wonderfall@targaryen.house>"
+LABEL maintainer="Lightweight <dave@davelane.nz>"
 
 CMD ["run.sh"]
